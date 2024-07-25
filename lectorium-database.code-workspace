@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "Database",
+			"path": "modules/database"
+		},
+		{
+			"name": "Bootstrap",
+			"path": "modules/bootstrap"
+		}
+	]
+}
