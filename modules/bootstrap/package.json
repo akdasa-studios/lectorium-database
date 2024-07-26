@@ -1,5 +1,5 @@
 {
-  "name": "lectorium-db-bootstrap",
+  "name": "lectorium-database-bootstrap",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/akdasa-studios/lectorium-db.git"
+    "url": "git+ssh://git@github.com/akdasa-studios/lectorium-database.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/akdasa-studios/lectorium-db/issues"
+    "url": "https://github.com/akdasa-studios/lectorium-database/issues"
   },
-  "homepage": "https://github.com/akdasa-studios/lectorium-db#readme",
+  "homepage": "https://github.com/akdasa-studios/lectorium-database#readme",
   "dependencies": {
     "nano": "^10.1.3",
     "typescript": "^5.5.4"
