@@ -3,7 +3,7 @@
 	"tasks": [
     {
       "type": "npm",
-      "script": "migrate",
+      "script": "migrate:dev",
       "problemMatcher": [],
       "label": "Migrate",
       "detail": "Runs migration scripts",

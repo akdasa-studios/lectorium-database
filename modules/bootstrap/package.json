@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "migrate": "tsc && node ./dist/index.js"
+    "migrate:dev": "tsc && node ./dist/index.js",
+    "migrate": "node ./dist/index.js"
   },
   "repository": {
     "type": "git",
