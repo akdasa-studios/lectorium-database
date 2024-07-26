@@ -12,6 +12,7 @@ services:
         - GROUP_ID=${DEVCONTAINER_USER_GID:-100}
     volumes:
       - ../../modules/bootstrap:/akd-studios/lectorium
+      - ../../.vscode:/akd-studios/lectorium/.vscode
     networks:
       - lectorium
 
