@@ -1,4 +1,4 @@
-import { ServerScope } from "nano"
+import { ServerScope } from 'nano'
 
 export interface IMigration {
   name: string

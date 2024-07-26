@@ -1,4 +1,4 @@
-import { Migration } from "./Migration";
+import { Migration } from './Migration'
 
 export class CreateUsersDatabase extends Migration {
   private readonly dbName = '_users'
