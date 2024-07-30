@@ -25,7 +25,7 @@ export class AddFiltersToLibraryDatabase extends Migration {
           trackInfos: function (doc) {
             return doc._id.startsWith("track::")
                 && doc._id.endsWith("::info");
-          }.toString(),
+          },
 
           // @ts-ignore
           trackTranscripts: function (doc, req) {
@@ -45,6 +45,13 @@ export class AddFiltersToLibraryDatabase extends Migration {
             return docType === "track"
                 && docSubType === "transcript"
                 && requestedTrackIds.includes(trackId);
+          },
+
+          // @ts-ignore
+          dictionaryData: function (doc, req) {
+            return doc._id.startsWith("location::")
+                || doc._id.startsWith("source::")
+                || doc._id.startsWith("author::");
           }
         }
       }
