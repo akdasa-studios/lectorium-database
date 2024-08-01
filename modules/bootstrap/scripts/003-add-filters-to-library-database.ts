@@ -52,6 +52,37 @@ export class AddFiltersToLibraryDatabase extends Migration {
             return doc._id.startsWith("location::")
                 || doc._id.startsWith("source::")
                 || doc._id.startsWith("author::");
+          },
+
+          // @ts-ignore
+          sync: function (doc, req) {
+            if (doc._id.startsWith("track::") && doc._id.endsWith("::info")) {
+              return true;
+            }
+
+            if (doc._id.startsWith("location::")
+              || doc._id.startsWith("source::")
+              || doc._id.startsWith("author::")
+            ) {
+              return true;
+            }
+
+            const idTokens = doc._id.split("::");
+
+            // Transcript ID format: track::<trackId>::transcript::<languageCode>
+            if (idTokens.length !== 4) { return false; }
+
+            // Extract document information from ID
+            const docType = idTokens[0];
+            const trackId = idTokens[1];
+            const docSubType = idTokens[2];
+            const requestedTrackIds = req.query.trackIds;
+
+            // Check if the document is a transcript and
+            // if the track ID is in the requested list
+            return docType === "track"
+                && docSubType === "transcript"
+                && requestedTrackIds.includes(trackId);
           }
         }
       }
