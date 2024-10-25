@@ -59,12 +59,8 @@ export class CreateLibraryTracksDatabase extends CreateLibraryDatabase {
 export class CreateLibraryTranscriptsDatabase extends CreateLibraryDatabase {
   get dbName(): string { return `library-transcripts-${this.version}` }
 
-  override async shouldMigrate(): Promise<boolean> {
-    return new Promise((resolve, reject) => { resolve(true) })
-  }
-
   override async migrate(): Promise<void> {
-    // await super.migrate()
+    await super.migrate()
 
     await this.server.request({
       db: this.dbName,
