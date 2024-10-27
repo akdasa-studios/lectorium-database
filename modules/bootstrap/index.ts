@@ -8,6 +8,10 @@ import {
   CreateLibraryDictionaryDatabase,
   CreateLibraryIndexDatabase,
 } from './scripts/002-create-library-databases'
+import {
+  CreateTracksInboxDatabase,
+  CreateTracksSourcesDatabase,
+} from './scripts/003-create-admin-databases'
 
 const connectionString = process.env.CONNECTION_STRING || 'http://lectorium:lectorium@database:5984'
 
@@ -19,6 +23,8 @@ const migrations = [
   new CreateLibraryTranscriptsDatabase(server),
   new CreateLibraryDictionaryDatabase(server),
   new CreateLibraryIndexDatabase(server),
+  new CreateTracksInboxDatabase(server),
+  new CreateTracksSourcesDatabase(server),
 ]
 
 async function migrate() {
