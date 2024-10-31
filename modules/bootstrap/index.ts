@@ -12,6 +12,9 @@ import {
   CreateTracksInboxDatabase,
   CreateTracksSourcesDatabase,
 } from './scripts/003-create-admin-databases'
+import {
+  CreateContentManagerUser,
+} from './scripts/004-create-users'
 
 const connectionString = process.env.CONNECTION_STRING || 'http://lectorium:lectorium@database:5984'
 
@@ -25,6 +28,7 @@ const migrations = [
   new CreateLibraryIndexDatabase(server),
   new CreateTracksInboxDatabase(server),
   new CreateTracksSourcesDatabase(server),
+  new CreateContentManagerUser(server),
 ]
 
 async function migrate() {
